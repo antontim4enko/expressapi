@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Notes API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 heading">
+                <h1>Welcome to the Notes API v1.1</h1>
+            </div>
+            <hr class="hr">
+        </div>
+        <div class="row " >
+            <h2 class="mx-auto">List of available requests :</h2>
+        </div>
+        <div class="row">
+            <h3>Getting All notes </h3>
+            <span class="query-type">GET</span>
+        </div>
+        <div class="row margin">
+            <div class="link">https://reactnotesapi.herokuapp.com/api/getData</div>
+        </div>
+        <div class="row">
+                <h3>Add new note </h3>
+                <span class="query-type">POST</span>
+        </div>
+        <div class="row margin">
+                <div class="link">https://reactnotesapi.herokuapp.com/api/putData</div>
+        </div>
+        <div class="row margin">
+            <h3>Params:</h3>
+            <ul >
+            <li>ID - id of the note</li>
+            <li>Text - text of the note</li>
+        </ul>
+        </div>
+        <div class="row">
+                <h3>Update note </h3>
+                <span class="query-type">PUT</span>
+        </div>
+        <div class="row margin">
+                <div class="link">https://reactnotesapi.herokuapp.com/api/updateNote</div>
+        </div>
+        <div class="row margin">
+            <h3>Params:</h3>
+            <ul >
+            <li>ID - id of the note</li>
+            <li>Text - text of the note</li>
+        </ul>
+        </div>
+        <div class="row">
+                <h3>Deleting note </h3>
+                <span class="query-type">DELETE</span>
+        </div>
+        <div class="row margin">
+                <div class="link">https://reactnotesapi.herokuapp.com/api/note/:note-id</div>
+        </div>
+        <div class="row margin">
+            <h3>Params:</h3>
+            <ul >
+            <li>note-id - id of the note</li>
+        </ul>
+        </div>
+    </div>
+
+   
+</body>
+
+</html>
