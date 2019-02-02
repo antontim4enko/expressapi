@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 //const logger = require("morgan");
 const Note = require("./note");
-const cors = require('cors;);
+const cors = require('cors');
 
 
 const API_PORT = 5000;
