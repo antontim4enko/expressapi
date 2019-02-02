@@ -3,12 +3,15 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 //const logger = require("morgan");
 const Note = require("./note");
+const cors = require('cors;);
 
 
 const API_PORT = 5000;
 const app = express();
 const router = express.Router();
 
+
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -83,11 +86,7 @@ router.get('/note/:id', (req, res) => {
 
 
 router.delete('/note/:id', (req, res) => {
-        res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Credentials", "true");
-    res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-    res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
-        Note.deleteOne({
+       Note.deleteOne({
             _id: req.params.id
         }, function (err, note) {
             if (err)
