@@ -3,12 +3,15 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 //const logger = require("morgan");
 const Note = require("./note");
+const cors = require('cors');
 
 
-const API_PORT = 8080;
+const API_PORT = 5000;
 const app = express();
 const router = express.Router();
 
+
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('static'));
@@ -17,6 +20,7 @@ app.use(express.static('static'));
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET", "PUT", "POST", "DELETE");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
@@ -85,7 +89,7 @@ router.get('/note/:id', (req, res) => {
 
 
 router.delete('/note/:id', (req, res) => {
-        Note.deleteOne({
+       Note.deleteOne({
             _id: req.params.id
         }, function (err, note) {
             if (err)
@@ -101,4 +105,4 @@ app.use("/api", router);
 
 
 // launch our backend into a port
-app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`));
+app.listen(process.env.PORT || API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`));
