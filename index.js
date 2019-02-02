@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const Note = require("./note");
 
 
-const API_PORT = 8080;
+const API_PORT = 5000;
 const app = express();
 const router = express.Router();
 
